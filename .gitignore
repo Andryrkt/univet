@@ -23,3 +23,9 @@
 php/vendor
 php/var
 *.log
+compose.env
+
+# postgres
+*.sql
+*.sqlite
+postgres-data

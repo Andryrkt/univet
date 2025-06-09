@@ -2,6 +2,9 @@ services:
   app:
     build:
       context: ./php
+    env_file:
+      - .env.local      # Chargement des variables Symfony
+      - compose.env
     container_name: univet_app
     volumes:
       - .:/var/www/html
@@ -13,6 +16,7 @@ services:
 
   db:
     image: postgres:15
+    env_file: compose.env
     container_name: univet_db
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
